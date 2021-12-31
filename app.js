@@ -17,5 +17,5 @@ const vm = new Vue({
   },
   created() {
     this.fetchInitial();
-  }
+  },
 })
