@@ -6,11 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./vue.js"></script>
   <title>Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div id="app">
-    {{defaultCity.location}}
+    <main class="container">
+      <div class="current_data_container">
+        <div class="current_data_seach">
+          <button>Seach for places</button>
+        </div>
+        <div class="current_data_information">
+          <div class="information_image">
+            <img :src="defaultCity.current.condition.icon" alt="">
+          </div>
+          <div class="information_temp">
+            {{defaultCity.current.temp_c}}
+          </div>
+          <div class="information_text">
+            {{defaultCity.current.condition.text}}
+          </div>
+          <div>
+            <div class="information_data">
+              Today - {{defaultCity.current.last_updated}}
+            </div>
+            <p class="information_city_name">{{defaultCity.location.name}}</p>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
   <script src="./app.js"></script>
 </body>
