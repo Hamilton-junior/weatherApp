@@ -9,6 +9,7 @@ const vm = new Vue({
   data: {
     location: 'Contagem',
     dataLocation: {},
+    sectionDataOpen: true,
   },
   methods: {
     fetchData() {
