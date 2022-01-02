@@ -14,9 +14,9 @@
 <body>
   <div id="app">
     <section class="side_section">
-      <div class="side_section_data">
+      <div class="side_section_data" v-if="sectionDataOpen">
         <div class="data_seach">
-          <button>Seach for places</button>
+          <button @click="sectionDataOpen = false">Seach for places</button>
         </div>
         <div class="data_information">
           <div class="data_information_condition">
@@ -30,14 +30,14 @@
           </div>
         </div>
       </div>
-      <div class="side_section_seach">
-        <button>X</button>
-        <div>
+      <div class="side_section_seach" v-else>
+          <button @click="sectionDataOpen = true">X</button>
+         <div>
           <form>
             <input type="text" name="location" placeholder="search location" />
             <button>Search</button>
           </form>
-        </div>
+         </div>
       </div>
     </section>
   </div>

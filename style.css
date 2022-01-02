@@ -83,3 +83,38 @@ body {
 .data_information_current p + p {
   margin-top: 5px;
 }
+.side_section_seach {
+  position: relative;
+}
+
+.side_section_seach > button {
+  color: #E7E7EB;
+  background: transparent;
+  border: none;
+  font-size: 1.125rem;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  cursor: pointer;
+  padding: 10px;
+}
+.side_section_seach form {
+  padding-top: 45px;
+  display: flex;
+  gap: 10px;
+}
+.side_section_seach form input {
+  border: 1px solid #E7E7EB;
+  background: transparent;
+  padding: 10px;
+  color: #616475;
+}
+.side_section_seach form button {
+  background: #3C47E9;
+  font-size: 1rem;
+  color: #E7E7EB;
+  font-weight: 600;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
