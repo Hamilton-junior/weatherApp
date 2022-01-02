@@ -9,5 +9,17 @@ const vm = new Vue({
   data: {
     location: 'Contagem',
     dataLocation: {},
+  },
+  methods: {
+    fetchData() {
+      fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${this.location}&days=5&aqi=no&alerts=no`)
+        .then(response => response.json())
+        .then(data => {
+          this.dataLocation = data;
+        })
+    },
+  },
+  created() {
+    this.fetchData()
   }
 })
