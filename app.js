@@ -12,7 +12,7 @@ const vm = new Vue({
   },
   methods: {
     fetchData() {
-      fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${this.location}&days=5&aqi=no&alerts=no`)
+      fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${this.location}&days=5&aqi=no&alerts=no&lang=pt`)
         .then(response => response.json())
         .then(data => {
           this.dataLocation = data;

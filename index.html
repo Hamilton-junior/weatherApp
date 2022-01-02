@@ -13,7 +13,33 @@
 </head>
 <body>
   <div id="app">
-    {{dataLocation.location}}
+    <section class="side_section">
+      <div class="side_section_data">
+        <div class="data_seach">
+          <button>Seach for places</button>
+        </div>
+        <div class="data_information">
+          <div class="data_information_condition">
+            <img :src="dataLocation.current.condition.icon" alt="dataLocation.current.condition.text" />
+            <span>{{dataLocation.current.temp_c}}</span>
+            <p>{{dataLocation.current.condition.text}}</p>
+          </div>
+          <div class="data_information_current">
+            <p>Today - {{dataLocation.current.last_updated}}</p>
+            <p>{{location}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="side_section_seach">
+        <button>X</button>
+        <div>
+          <form>
+            <input type="text" name="location" placeholder="search location" />
+            <button>Search</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script src="./app.js"></script>
