@@ -1,7 +1,3 @@
-// ter uma variavel que recebe o local
-// uma variavel para receber os dados
-// criar um método para pegar os dados da api
-
 const apiKey = '6ad7a6de723a46efbc5180552213112';
 
 const vm = new Vue({
@@ -10,6 +6,7 @@ const vm = new Vue({
     location: 'Contagem',
     dataLocation: {},
     sectionDataOpen: true,
+    inputValue: "",
   },
   methods: {
     fetchData() {
@@ -19,6 +16,17 @@ const vm = new Vue({
           this.dataLocation = data;
         })
     },
+    getDataForm() {
+      this.location = this.inputValue;
+    }
+  },
+  watch: {
+    location() {
+      this.fetchData();
+      setTimeout(() => {
+        this.sectionDataOpen = true;
+      }, 100)
+    }
   },
   created() {
     this.fetchData()

@@ -34,8 +34,8 @@
           <button @click="sectionDataOpen = true">X</button>
          <div>
           <form>
-            <input type="text" name="location" placeholder="search location" />
-            <button>Search</button>
+            <input type="text" v-model.lazy="inputValue" name="location" placeholder="search location" />
+            <button @click.prevent="getDataForm">Search</button>
           </form>
          </div>
       </div>
