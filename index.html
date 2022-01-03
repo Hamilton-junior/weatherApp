@@ -21,11 +21,11 @@
         <div class="data_information">
           <div class="data_information_condition">
             <img :src="dataLocation.current.condition.icon" :alt="dataLocation.current.condition.text" />
-            <span>{{dataLocation.current.temp_c}}</span>
+            <span>{{dataLocation.current.temp_c}}<span class="graus_celsius">ºc</span></span>
             <p>{{dataLocation.current.condition.text}}</p>
           </div>
           <div class="data_information_current">
-            <p>Today - {{dataLocation.location.localtime}}</p>
+            <p>Today - {{dataLocation.location.localtime | localTimeTransform}}</p>
             <p>{{location}}</p>
           </div>
         </div>
@@ -44,11 +44,11 @@
       <div class="section_forecast">
         <ul>
           <li v-for="item in dataLocation.forecast.forecastday">
-            <p class="section_forescast_date">{{item.date}}</p>
+            <p class="section_forescast_date">{{item.date | dataTransform}}</p>
             <p><img :src="item.day.condition.icon" :alt="item.day.condition.text"></p>
             <p class="section_forescast_temp">
-              <span>{{item.day.maxtemp_c}}</span>
-              <span>{{item.day.mintemp_c}}</span>
+              <span>{{item.day.maxtemp_c | degreesCelsius}}</span>
+              <span>{{item.day.mintemp_c | degreesCelsius}}</span>
             </p>
           </li>
         </ul>
