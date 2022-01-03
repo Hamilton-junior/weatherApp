@@ -23,9 +23,7 @@ const vm = new Vue({
   watch: {
     location() {
       this.fetchData();
-      setTimeout(() => {
-        this.sectionDataOpen = true;
-      }, 100)
+      this.sectionDataOpen = true;
     }
   },
   created() {

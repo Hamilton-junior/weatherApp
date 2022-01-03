@@ -20,12 +20,12 @@
         </div>
         <div class="data_information">
           <div class="data_information_condition">
-            <img :src="dataLocation.current.condition.icon" alt="dataLocation.current.condition.text" />
+            <img :src="dataLocation.current.condition.icon" :alt="dataLocation.current.condition.text" />
             <span>{{dataLocation.current.temp_c}}</span>
             <p>{{dataLocation.current.condition.text}}</p>
           </div>
           <div class="data_information_current">
-            <p>Today - {{dataLocation.current.last_updated}}</p>
+            <p>Today - {{dataLocation.location.localtime}}</p>
             <p>{{location}}</p>
           </div>
         </div>
@@ -40,6 +40,41 @@
          </div>
       </div>
     </section>
+    <main class="section_varied_data">
+      <div class="section_forecast">
+        <ul>
+          <li v-for="item in dataLocation.forecast.forecastday">
+            <p class="section_forescast_date">{{item.date}}</p>
+            <p><img :src="item.day.condition.icon" :alt="item.day.condition.text"></p>
+            <p class="section_forescast_temp">
+              <span>{{item.day.maxtemp_c}}</span>
+              <span>{{item.day.mintemp_c}}</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="section_hightlights">
+        <h1>Today's Hightlights</h1>
+        <ul>
+          <li>
+            <h2>Wind status</h2>
+            <p>{{dataLocation.current.wind_kph}} kph</p>
+          </li>
+          <li>
+            <h2>Humidity</h2>
+            <p>{{dataLocation.current.humidity}}%</p>
+          </li>
+          <li>
+            <h2>Visibility</h2>
+            <p>{{dataLocation.current.vis_miles}} miles</p>
+          </li>
+          <li>
+            <h2>Air Pressure</h2>
+            <p>{{dataLocation.current.pressure_mb}} mb</p>
+          </li>
+        </ul>
+      </div>
+    </main>
   </div>
 
   <script src="./app.js"></script>
