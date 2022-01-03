@@ -106,6 +106,7 @@ body {
 .side_section_seach form {
   padding-top: 45px;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .side_section_seach form input {
@@ -192,5 +193,38 @@ body {
   font-weight: bold;
   line-height: 1;
   color: #E7E7EB;
-  margin-top: 6px;
+  margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .section_hightlights p {
+    font-size: 2rem;
+  }
+  .data_information_condition span {
+    font-size: 4rem;
+  }
+  .section_varied_data {
+    padding: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  #app {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .side_section,
+  .section_varied_data {
+    padding: 20px;
+  }
+  .section_forecast ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  .section_hightlights ul {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
